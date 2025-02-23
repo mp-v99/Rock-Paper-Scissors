@@ -52,7 +52,7 @@ RUN the Round function in a loop of five iterations
 
 
 
-console.log("Hello, and welcome to the epic ROCK-PAPER-SCISSORS Game!!!")
+alert("Hello, and welcome to the epic ROCK-PAPER-SCISSORS Game!!!")
 
 let userScore = 0;
 let computerScore = 0;
@@ -87,14 +87,14 @@ function getHumanChoice() {
 function Round(humanChoice, computerChoice) {
 
     if(humanChoice === computerChoice) {
-        console.log(`It's a tie!!!!!`)
+        alert(`It's a tie!!!!!`)
     }
     else if (humanChoice === 'Rock' && computerChoice === 'Paper' ||
         humanChoice === 'Paper' && computerChoice === 'Scissors' ||
         humanChoice === 'Scissors' && computerChoice === 'Rock'
     )
     {
-        console.log(`AI wins this round.`)
+        alert(`AI wins this round.`)
         computerScore++;
     }
     else if (computerChoice === 'Rock' && humanChoice === 'Paper' ||
@@ -102,7 +102,7 @@ function Round(humanChoice, computerChoice) {
         computerChoice === 'Scissors' && humanChoice === 'Rock'
     ) 
     {
-        console.log(`Humanity wins this round.`)
+        alert(`Humanity wins this round.`)
         userScore++;
     }
     else {
