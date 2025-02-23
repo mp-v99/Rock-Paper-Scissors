@@ -38,6 +38,14 @@ DECLARE Round Function
         RETURN 'AI wins, sorry human. You played humanChoice and the machine played computerChoice'
     ELSE 
         RETURN 'Humanity has won, for now. You played humanChoice and the machine played computerChoice'
+
+RUN the Round function in a loop of five iterations
+    IF 5 iterations have occurred AND humanScore is GREATER THAN computerScore 
+        RETURN 'Humanity has won!'
+    ELSE IF 5 iterations have occurred AND humanScore is LOWER THAN computerScore
+        RETURN 'AI won'
+    ELSE 
+        RETURN 'WTF happened lol'
 */
 
 
@@ -49,8 +57,7 @@ console.log("Hello, and welcome to the epic ROCK-PAPER-SCISSORS Game!!!")
 let userScore = 0;
 let computerScore = 0;
 
-Round(getHumanChoice(), getComputerChoice());
-
+playGame();
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * (3) + 1);
@@ -74,10 +81,7 @@ function getHumanChoice() {
     } else if (humanChoice === 'SCISSORS' || humanChoice === 'SCISSOR') {
         return 'Scissors';
     }
-    else {
-        alert("Are you sure you wrote rock or paper or scissors?")
-    }
-    console.log(humanChoice)
+
 }
 
 function Round(humanChoice, computerChoice) {
@@ -86,13 +90,34 @@ function Round(humanChoice, computerChoice) {
         console.log(`It's a tie!!!!!`)
     }
     else if (humanChoice === 'Rock' && computerChoice === 'Paper' ||
-             humanChoice === 'Paper' && computerChoice === 'Scissors' ||
-             humanChoice === 'Scissors' && computerChoice === 'Rock'
+        humanChoice === 'Paper' && computerChoice === 'Scissors' ||
+        humanChoice === 'Scissors' && computerChoice === 'Rock'
     )
     {
-        console.log(`AI wins, sorry human. You played ${humanChoice} and the machine played ${computerChoice}`)
+        console.log(`AI wins this round.`)
+        computerScore++;
+    }
+    else if (computerChoice === 'Rock' && humanChoice === 'Paper' ||
+        computerChoice === 'Paper' && humanChoice === 'Scissors' ||
+        computerChoice === 'Scissors' && humanChoice === 'Rock'
+    ) 
+    {
+        console.log(`Humanity wins this round.`)
+        userScore++;
     }
     else {
-        console.log(`Humanity has won, for now. You played ${humanChoice} and the machine played ${computerChoice}`)
+        alert("Are you sure you wrote rock or paper or scissors?")
+    }
+}
+
+function playGame() {
+    for (let i = 1; i <= 5; i++) {
+        Round(getHumanChoice(), getComputerChoice());
+        if (i === 5 && userScore > computerScore) {
+            console.log('Congratulations Human, you have saved the world.')
+        }
+        else if (i === 5 && userScore < computerScore) {
+            console.log(`Oopsie, AI has won. Unless the sun farts, then we get to have a second chance!`)
+        }
     }
 }
