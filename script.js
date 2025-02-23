@@ -72,7 +72,7 @@ function getComputerChoice() {
 }
 
 function getHumanChoice() {
-    let humanChoice =   prompt("Choose Rock, Paper or Scissor!").toUpperCase();
+    let humanChoice =   prompt("Choose Rock, Paper or Scissors!").toUpperCase();
 
     if(humanChoice === 'ROCK') {
         return 'Rock';
