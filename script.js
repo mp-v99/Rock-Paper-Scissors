@@ -30,7 +30,7 @@ DECLARE Round Function
     TAKE humanChoice and computerChoice parameters
     IF humanChoice EQUALS computerChoice
         RETURN "It's a tie!"
-        
+
     ELSE IF humanChoice EQUALS Rock && computerChoice EQUALS Paper OR
     humanChoice EQUALS Paper && computerChoice EQUALS Scissors OR
     humanChoice EQUALS Scissors && computerChoice EQUALS Rock 
@@ -49,8 +49,7 @@ console.log("Hello, and welcome to the epic ROCK-PAPER-SCISSORS Game!!!")
 let userScore = 0;
 let computerScore = 0;
 
-getComputerChoice();
-getHumanChoice();
+Round(getHumanChoice(), getComputerChoice());
 
 
 function getComputerChoice() {
@@ -69,11 +68,11 @@ function getHumanChoice() {
     let humanChoice =   prompt("Choose Rock, Paper or Scissor!").toUpperCase();
 
     if(humanChoice === 'ROCK') {
-        humanChoice = 'Rock';
+        return 'Rock';
     } else if (humanChoice === 'PAPER') {
-        humanChoice = 'Paper';
+        return 'Paper';
     } else if (humanChoice === 'SCISSORS' || humanChoice === 'SCISSOR') {
-        humanChoice = 'Scissors';
+        return 'Scissors';
     }
     else {
         alert("Are you sure you wrote rock or paper or scissors?")
@@ -81,3 +80,19 @@ function getHumanChoice() {
     console.log(humanChoice)
 }
 
+function Round(humanChoice, computerChoice) {
+
+    if(humanChoice === computerChoice) {
+        console.log(`It's a tie!!!!!`)
+    }
+    else if (humanChoice === 'Rock' && computerChoice === 'Paper' ||
+             humanChoice === 'Paper' && computerChoice === 'Scissors' ||
+             humanChoice === 'Scissors' && computerChoice === 'Rock'
+    )
+    {
+        console.log(`AI wins, sorry human. You played ${humanChoice} and the machine played ${computerChoice}`)
+    }
+    else {
+        console.log(`Humanity has won, for now. You played ${humanChoice} and the machine played ${computerChoice}`)
+    }
+}
