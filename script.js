@@ -4,6 +4,7 @@ PSEUDOCODE(Yes, after I actually wrote some code already):
 LOG Welcome Message for the user
 
 DECLARE Score variables
+DECLARE falsy error message;
 
 DECLARE Computer Choice Function
     DECLARE randomNumber that will return 1, 2 or 3
@@ -24,11 +25,15 @@ DECLARE Human Choice Funciton
     ELSE IF humanChoice EQUALS SCISSORS
         RETURN humanChoice EQUALS 'Scissors'
     ELSE
-        RETURN Error Message
+        RETURN Error Message AND retry the round 
 
 DECLARE Round Function
     TAKE humanChoice and computerChoice parameters
-    IF humanChoice EQUALS computerChoice
+
+    IF errorMessage EQUALS true 
+        SUBTRACT 1 of the errormessage 
+        MAKE errorMessage falsy again
+    ELSE IF humanChoice EQUALS computerChoice
         RETURN "It's a tie!"
 
     ELSE IF humanChoice EQUALS Rock && computerChoice EQUALS Paper OR
@@ -56,6 +61,7 @@ alert("Hello, and welcome to the epic ROCK-PAPER-SCISSORS Game!!!")
 
 let userScore = 0;
 let computerScore = 0;
+let errorMessage = false;
 
 playGame();
 
@@ -65,7 +71,7 @@ function getComputerChoice() {
     if (randomNumber === 1) {
         return compChoice = 'Rock';
     } else if (randomNumber === 2) {
-            return compChoice = 'Paper';
+        return compChoice = 'Paper';
     } else {
         return compChoice = 'Scissors';
     }
@@ -84,17 +90,17 @@ function getHumanChoice() {
 
 }
 
-function Round(humanChoice, computerChoice) {
-
+function Round(humanChoice, computerChoice, iteration) {
+    
     if(humanChoice === computerChoice) {
-        alert(`It's a tie!!!!!`)
+        console.log(`It's a tie!!!!! Round # ${iteration}`)
     }
     else if (humanChoice === 'Rock' && computerChoice === 'Paper' ||
         humanChoice === 'Paper' && computerChoice === 'Scissors' ||
         humanChoice === 'Scissors' && computerChoice === 'Rock'
     )
     {
-        alert(`AI wins this round.`)
+        console.log(`AI wins Round # ${iteration}`)
         computerScore++;
     }
     else if (computerChoice === 'Rock' && humanChoice === 'Paper' ||
@@ -102,22 +108,30 @@ function Round(humanChoice, computerChoice) {
         computerChoice === 'Scissors' && humanChoice === 'Rock'
     ) 
     {
-        alert(`Humanity wins this round.`)
+        console.log(`Humanity wins Round # ${iteration}`)
         userScore++;
     }
     else {
-        alert("Are you sure you wrote rock or paper or scissors?")
+        alert(`Looks like a typo. Try that again, you are at Round # ${iteration}`)
+        errorMessage = true;
     }
 }
 
 function playGame() {
+
     for (let i = 1; i <= 5; i++) {
-        Round(getHumanChoice(), getComputerChoice());
-        if (i === 5 && userScore > computerScore) {
-            console.log('Congratulations Human, you have saved the world.')
+
+        Round(getHumanChoice(), getComputerChoice(), i);
+
+        if(errorMessage) {
+            i--
+            errorMessage = false;
+        }
+        else if (i === 5 && userScore > computerScore) {
+            alert('Congratulations Human, you have saved the world.')
         }
         else if (i === 5 && userScore < computerScore) {
-            console.log(`Oopsie, AI has won. Unless the sun farts, then we get to have a second chance!`)
+            alert(`Oopsie, AI has won. Unless the sun farts, then we get to have a second chance!`)
         }
     }
 }
