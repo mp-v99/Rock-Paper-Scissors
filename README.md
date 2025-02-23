@@ -9,3 +9,8 @@ The first version consists of applying my newly acquired knowledge of functions 
 The getComputerChoice will use the Math.random method to return one of the three options(rock, paper or scissors) 
 
 The getHumanChoice function will take input from the user to return of the three options as well. 
+
+The score variables, of course, keep track of both pc and player's scores. 
+
+The Round function compares the values returned by getHumanChoice and getComputerChoice to determine who's 
+the winner. 
