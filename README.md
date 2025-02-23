@@ -13,4 +13,6 @@ The getHumanChoice function will take input from the user to return of the three
 The score variables, of course, keep track of both pc and player's scores. 
 
 The Round function compares the values returned by getHumanChoice and getComputerChoice to determine who's 
-the winner. 
+the winner.     
+
+The playGame function runs a loop than counts 5 iterations and, in the end, compares the scores to determine who won and then logs a message depending on the winner
