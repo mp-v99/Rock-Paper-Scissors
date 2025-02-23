@@ -1,5 +1,8 @@
 console.log("Hello, and welcome to the epic ROCK-PAPER-SCISSORS Game!!!")
 
+let userScore = 0;
+let computerScore = 0;
+
 getComputerChoice();
 getHumanChoice();
 
