@@ -1,10 +1,11 @@
-alert("Hello, and welcome to the epic ROCK-PAPER-SCISSORS Game!!!")
 
 let userScore = 0;
 let computerScore = 0;
 let errorMessage = false;
+let playerName = prompt(`What's your name?`);
+const playerChoice = document.createElement('img')
+playerCard.textContent = playerName;
 
-playGame();
 
 function getComputerChoice() {
     let randomNumber = Math.floor(Math.random() * (3) + 1);
@@ -76,3 +77,4 @@ function playGame() {
         }
     }
 }
+
