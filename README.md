@@ -2,6 +2,10 @@
 
 Hello world!  Welcome to my [Rock-Paper-Scissors](https://mp-v99.github.io/Rock-Paper-Scissors/ "This is the live preview") project. 
 
+SECOND VERSION:
+
+The objective of the second version is to revisit the project to move the logic from the console to a UI, leveraging my recently acquired skills on manipulating the DOM. 
+
 FIRST VERSION: 
 
 The first version consists of applying my newly acquired knowledge of functions to play Rock, Paper, Scissors against a machine. 
