@@ -4,10 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="script.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h2>This is the Rock, Paper, Scissors game!!!</h2>
-    
+    <main class="container">
+        <div class="header">
+            <h1>This is the Rock, Paper, Scissors game!!! </h1>
+        </div>
+        <div id="body">
+            <div id="player_side">
+                <h1 id="player_name">Player</h1>
+                <ul>
+                    <li>
+                        <button id="rock_button"><img src="rps_pictures/rock_pointing_right.png" alt="Rock Pointing Right"></button>
+                        <p>Rock</p>
+                    </li>
+                    <li>
+                        <button><img src="rps_pictures/paper_pointing_right.png" alt="Paper Pointing Right"></button>
+                        <p>Paper</p>
+                    </li>
+                    <li>
+                        <button><img src="rps_pictures/scissors_pointing_right.png" alt="Scissors Pointing Right"></button>
+                        <p>Scissors</p>
+                    </li>
+                </ul>
+            </div>
+            <div id="game_arena"></div>
+            <div id="computer_side">
+                <h1>CHATGPT</h1>
+                <ul>
+                    <li>
+                        <button><img src="rps_pictures/rock_pointing_left.png" alt="Rock Pointing Left"></button>
+                        <p>Rock</p>
+                    </li>
+                    <li>
+                        <button><img src="rps_pictures/paper_pointing_left.png" alt="Paper Pointing Left"></button>
+                        <p>Paper</p>
+                    </li>
+                    <li>
+                        <button><img src="rps_pictures/scissors_pointing_left.png" alt="Scissors Pointing Left"></button>
+                        <p>Scissors</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer">
+            <h2>Designed with love by Max Pons</h2>
+        </div>
+    </main>
 </body>
 </html>
