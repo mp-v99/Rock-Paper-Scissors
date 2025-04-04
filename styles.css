@@ -19,7 +19,6 @@ body {
     color: #efefef;
     display: flex;
     font-family: sans-serif;
-    
 }
 
 .hidden {
@@ -56,7 +55,8 @@ body {
 }
 
 #body > div {
-    flex: 1px;
+    flex: 1;
+    min-height: 60%;
 }
 
 #body > div ul {
@@ -69,13 +69,29 @@ body {
     border-radius: 2%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
     height: 60%;
 }
 
-ul {
+#player_side > div,
+#computer_side > div {
+    flex: 1;    
     display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#player_side > .card_middle,
+#computer_side > .card_middle {
+    flex-grow: 2;
+    display: flex;    
+}
+
+.card_middle > ul {
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 ul > li {
@@ -101,3 +117,15 @@ li > button {
 #computer_side {
     background-color: #ff004f;
 }
+
+#game_arena {
+    display: flex;
+}
+
+#game_arena > div {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

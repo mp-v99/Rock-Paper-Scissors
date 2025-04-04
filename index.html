@@ -14,39 +14,52 @@
         </div>
         <div id="body">
             <div id="player_side">
-                <h1 id="player_name">Player</h1>
-                <ul>
-                    <li>
-                        <button id="rock_button"><img src="rps_pictures/rock_pointing_right.png" alt="Rock Pointing Right"></button>
-                        <p>Rock</p>
-                    </li>
-                    <li>
-                        <button><img src="rps_pictures/paper_pointing_right.png" alt="Paper Pointing Right"></button>
-                        <p>Paper</p>
-                    </li>
-                    <li>
-                        <button><img src="rps_pictures/scissors_pointing_right.png" alt="Scissors Pointing Right"></button>
-                        <p>Scissors</p>
-                    </li>
-                </ul>
+                <div class="card_top"><h1 id="player_name">Player</h1></div>
+                <div class="card_middle">
+                    <ul>
+                        <li>
+                            <button id="rock_button" class="play_button"><img src="rps_pictures/rock_pointing_right.png" alt="Rock Pointing Right"></button>
+                            <p>Rock</p>
+                        </li>
+                        <li>
+                            <button id="paper_button" class="play_button"><img src="rps_pictures/paper_pointing_right.png" alt="Paper Pointing Right"></button>
+                            <p>Paper</p>
+                        </li>
+                        <li>
+                            <button id="scissors_button" class="play_button"><img src="rps_pictures/scissors_pointing_right.png" alt="Scissors Pointing Right"></button>
+                            <p>Scissors</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card_bottom"><h2>Score: 0</h2></div>
             </div>
-            <div id="game_arena"></div>
+            <div id="game_arena">
+                <div id="player_move">
+                </div>
+                <div id="result">
+                </div>
+                <div id="computer_move">
+                </div>
+            </div>
             <div id="computer_side">
-                <h1>CHATGPT</h1>
-                <ul>
-                    <li>
-                        <button><img src="rps_pictures/rock_pointing_left.png" alt="Rock Pointing Left"></button>
-                        <p>Rock</p>
-                    </li>
-                    <li>
-                        <button><img src="rps_pictures/paper_pointing_left.png" alt="Paper Pointing Left"></button>
-                        <p>Paper</p>
-                    </li>
-                    <li>
-                        <button><img src="rps_pictures/scissors_pointing_left.png" alt="Scissors Pointing Left"></button>
-                        <p>Scissors</p>
-                    </li>
-                </ul>
+                <div class="card_top"><h1>AI</h1></div>
+                <div class="card_middle">
+                    <ul>
+                        <li>
+                            <button><img src="rps_pictures/rock_pointing_left.png" alt="Rock Pointing Left"></button>
+                            <p>Rock</p>
+                        </li>
+                        <li>
+                            <button><img src="rps_pictures/paper_pointing_left.png" alt="Paper Pointing Left"></button>
+                            <p>Paper</p>
+                        </li>
+                        <li>
+                            <button><img src="rps_pictures/scissors_pointing_left.png" alt="Scissors Pointing Left"></button>
+                            <p>Scissors</p>
+                        </li>
+                    </ul>
+                </div>
+                <div class="card_bottom"><h2>Score: 0</h2></div>
             </div>
         </div>
         <div class="footer">
