@@ -110,6 +110,10 @@ li > button {
     background-color: transparent;
 }
 
+li > button:hover {
+    cursor: pointer;
+}
+
 #player_side {
     background-color: #56aedd;
 }
